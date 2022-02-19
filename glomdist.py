@@ -19,4 +19,4 @@ for a in range(127-2):
         
 data = sorted(data)
 for x in data[:100]:
-  print '%g %g %d %d %d'%x
+  print ('%g %g %d %d %d'%x)

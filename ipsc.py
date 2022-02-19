@@ -61,12 +61,12 @@ for glom in gloms:
     v_mc = glom2v_mc(filename, glom)
     data.append((gd(glom,37),v_mt/v_mt_37,v_mc/v_mc_37))
   except:
-    print glom, 'is absent'
+    print (glom, 'is absent')
 data = sorted(data)
 fo = open('../outt.xt', 'w')
-print filename
+print (filename)
 for x in data:
-  print '%g %g %g'%x
+  print ('%g %g %g'%x)
   fo.write('%g %g %g\n'%x)
 fo.close()
-print '\n'
+print ('\n')

@@ -154,8 +154,8 @@ class SpikesGraph:
 if __name__ == '__main__':
   from bulbdict import BulbDict
   bd = BulbDict('fakeodor.dic')
-  print 'dict loaded'
+  print ('dict loaded')
   sg = SpikesGraph(bd, 'fakeodor.spk2')
-  print 'spikes graph loaded'
+  print ('spikes graph loaded')
   sg.show([0])
   sg.show([0])

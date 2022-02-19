@@ -242,6 +242,6 @@ class SpikesReader:
 
 if __name__ == '__main__':
   sr = SpikesReader('out.spk2')
-  print sr.tstop
-  print sr.retrieve(0)
+  print (sr.tstop)
+  print (sr.retrieve(0))
       

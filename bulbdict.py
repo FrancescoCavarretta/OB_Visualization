@@ -45,8 +45,8 @@ class BulbDict:
         
         rec = fi.read(22)
 
-    print self.mgid_dict.keys()
-    print self.mtgid_dict.keys()
+    print (self.mgid_dict.keys())
+    print (self.mtgid_dict.keys())
     
   def __is_rs_of(self, gid, gidfunc):
     try:

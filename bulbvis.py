@@ -108,14 +108,14 @@ class SceneObject(object):
     self.actor.property.opacity = 1 
 
   def printinfo(self):
-    print '\n\nelement information'
+    print ('\n\nelement information')
     for gid in sorted(set(self.gids)):
       if bulbdef.gid_is_mitral(gid):
-        print 'MC  %d'%gid
+        print ('MC  %d'%gid)
       elif bulbdef.gid_is_mtufted(gid):
-        print 'mTC %d'%gid
+        print ('mTC %d'%gid)
       elif bulbdef.gid_is_granule(gid):
-        print 'GC  %d'%gid
+        print ('GC  %d'%gid)
       else:
         ci = bulbdict.query(gid)
         if bulbdef.gid_is_mitral(ci[0]):
@@ -123,7 +123,7 @@ class SceneObject(object):
         else:
           s = 'mTC'
         x = (gid, s)+ci[:3]+(ci[3],)
-        print '%d:\t %s %d, %d, %.1g\t<-> GC %d'%x
+        print ('%d:\t %s %d, %d, %.1g\t<-> GC %d'%x)
         
 
 
@@ -164,8 +164,8 @@ class Glom(SceneObject):
     self.weights = glomweights
     
   def printinfo(self):
-    print '\n\nelement information'
-    print 'glom. %d\n'%self.gids[0]
+    print ('\n\nelement information')
+    print ('glom. %d\n'%self.gids[0])
 
   def weight(self, excit=True):
     if len(self.weights) > 0:

@@ -192,4 +192,4 @@ if __name__ == '__main__':
   t = 50
   x = [ (0, 1), (25, 2), (90, 1) ]
   k = specialBinarySearch(x, t)
-  print x, t, k
+  print (x, t, k)

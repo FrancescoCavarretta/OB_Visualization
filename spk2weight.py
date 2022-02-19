@@ -32,4 +32,4 @@ for g, info in bindict.gid_dict.items():
     w=0
   fo.write('%d %d %g\n' % (g,w,0))
 fo.close()
-print 'done'
+print ('done')

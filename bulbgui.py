@@ -52,7 +52,7 @@ def init_layers():
 
 
 from sys import argv
-print argv
+print (argv)
 try:
   bv.bulbdict = BulbDict(argv[argv.index('-dict')+1])
 except: pass
@@ -169,7 +169,7 @@ class MenuHandler(Handler):
       code = 'def _show_%s(self,info):self._ccslider_show(\'%s\')'%(odname, odname)
       # compile the new func.
       compcode = {}
-      exec code.strip() in compcode
+      exec (code.strip() in compcode)
       funcname = '_show_%s'%odname
       setattr(self.__class__, funcname, compcode[funcname])
 
@@ -392,10 +392,10 @@ class BulbCutGUI(HasTraits):
                        self.cutplane.implicit_plane.origin, \
                        self.depth)
       
-      print '\n\ncutplane\n\t', \
+      print ('\n\ncutplane\n\t', \
             self.cutplane.implicit_plane.normal, \
             self.cutplane.implicit_plane.origin, \
-            self.depth, '\n'
+            self.depth, '\n')
 
       self.cutplane.remove()
       self.cutplane = None

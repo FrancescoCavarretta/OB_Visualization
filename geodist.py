@@ -81,14 +81,14 @@ except IOError:
   fo = open('geodist.txt', 'w')
   for i in range(ng-1):
     for j in range(i+1, ng):
-      print 'distance between', i, j, '...'
+      print ('distance between', i, j, '...')
       p = params.glom_coord[i]
       q = params.glom_coord[j]
       d = geodist(p, q)[0]
       adj[(i, j)] = adj[(j, i)] = d
       fo.write('%d %d %g\n' % (i, j, d))
       fo.write('%d %d %g\n' % (j, i, d))
-      print '\t...done'
+      print ('\t...done')
   fo.close()
-  print 'all distance are been calculated'
+  print ('all distance are been calculated')
 

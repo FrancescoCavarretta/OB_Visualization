@@ -40,7 +40,7 @@ with open(fileout, 'w') as fo:
           d_mc = (fr_mc_37_2-fr_mc_37)/fr_mc_37
           d_mt = (fr_mt_37_2-fr_mt_37)/fr_mt_37
           x = ( round( gd(_glom, 37)/100)*100,  (_ccperc-0.5)/0.5, d_mc, d_mt )
-          print fr_mc_37/2.,fr_mt_37/2.,gd(_glom, 37), _ccperc-0.5, d_mc, d_mt
+          print (fr_mc_37/2.,fr_mt_37/2.,gd(_glom, 37), _ccperc-0.5, d_mc, d_mt)
           fo.write('%g %g %g %g\n'%x)
         except: pass
     except: pass

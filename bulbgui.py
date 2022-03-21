@@ -86,15 +86,16 @@ try:
       bv.synweights[gid] = float(tk[1])/syn_maxweight
 except: pass
 
+#try:
+filename = argv[argv.index('-spikes')+1]
 try:
-  filename = argv[argv.index('-spikes')+1]
-  try:
-    wfilename = argv[argv.index('-initweights')+1]
-  except:
-    wfilename = None
-  bv.spkgraph = bv.SpikesGraph(bv.bulbdict, filename, wfilename)
-  bv.spkgraph.sr.hebbian = '-hebbian' in argv
-except: pass
+  wfilename = argv[argv.index('-initweights')+1]
+except:
+  wfilename = None
+bv.spkgraph = bv.SpikesGraph(bv.bulbdict, filename, wfilename)
+print ("spkgraph:", bv.spkgraph)
+bv.spkgraph.sr.hebbian = '-hebbian' in argv
+#except: pass
 
 try:
   filename = argv[argv.index('-prefix')+1]
@@ -168,8 +169,8 @@ class MenuHandler(Handler):
     for odname in bv.odors.odors.keys():
       code = 'def _show_%s(self,info):self._ccslider_show(\'%s\')'%(odname, odname)
       # compile the new func.
-      compcode = {}
-      exec (code.strip() in compcode)
+      compcode = locals()
+      exec (code.strip(), globals(), compcode)
       funcname = '_show_%s'%odname
       setattr(self.__class__, funcname, compcode[funcname])
 
@@ -332,7 +333,7 @@ class BulbGUI(HasTraits):
   
   def _clearcells_fired(self):
     dw()
-    for cellid in self.bulbvis.cell.keys():
+    for cellid in list( self.bulbvis.cell.keys() ):
       self.bulbvis.delcell(cellid)
     up()
     if bv.spkgraph:

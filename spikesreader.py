@@ -136,7 +136,7 @@ class SpikesReader:
     self.fi = open(spkfilename, 'rb')
     
     offset = unpack('>q', self.fi.read(8))[0]
-    Nrecord = offset/8
+    Nrecord = int(offset/8)
     offset += 8
     
     # initial weights

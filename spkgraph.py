@@ -68,7 +68,7 @@ class SpikesGraph:
       # draw the raster or the line
       plotgen(x, y, legend(self.bulbdict, gid), color[i])
       
-    pylab.legend().draggable()
+    pylab.legend() #.draggable()
     pylab.xlim([-1, self.sr.tstop])
     if len(ylim):
       pylab.ylim(ylim)
@@ -113,6 +113,7 @@ class SpikesGraph:
   
    
   def show(self, gids):
+    
     if len(gids):
       gid_soma = set()
       gid_syn = set()
@@ -133,11 +134,12 @@ class SpikesGraph:
       gid_soma = list(gid_soma.intersection(self.sr.header.keys()))
 
       # new process
-      if self.__win:
-        self.__show(gid_soma, gid_syn)
-      else:
-        self.__plotproc.append(Process(target=self.__show, args=(gid_soma, gid_syn)))
-        self.__plotproc[-1].start()
+      #if self.__win:
+      #  self.__show(gid_soma, gid_syn)
+      #else:
+      self.__show(gid_soma, gid_syn)
+        #self.__plotproc.append(Process(target=self.__show, args=(gid_soma, gid_syn)))
+        #self.__plotproc[-1].start()
         
         
 

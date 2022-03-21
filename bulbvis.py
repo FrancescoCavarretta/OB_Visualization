@@ -4,7 +4,7 @@ import bulbdef
 import odors
 from cellreader import CellReader
 from spkgraph import SpikesGraph
-import spkgraph
+#import spkgraph
 
 gc_fast = True
 gc_threshold = None
@@ -413,7 +413,7 @@ if gc_fast:
         self.__selobj = []
 
         if picker.actor in self.__actor.actor.actors:
-          index = picker.point_id / self.__actor.glyph.glyph_source.glyph_source.output.points.to_array().shape[0]
+          index = int( picker.point_id / self.__actor.glyph.glyph_source.glyph_source.output.points.to_array().shape[0] )
           if index != -1:
             o = self.objs[index]
             o.select()
